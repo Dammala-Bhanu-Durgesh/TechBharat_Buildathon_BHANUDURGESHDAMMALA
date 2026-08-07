@@ -1,0 +1,50 @@
+{
+  "manifest_version": 3,
+  "name": "TechBharat Screen Summarizer",
+  "description": "Summarize the current page, selection, or a drawn screen region without leaving the tab.",
+  "version": "1.0.0",
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_title": "Summarize this screen"
+  },
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "commands": {
+    "summarize-page": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+Y",
+        "mac": "Command+Shift+Y"
+      },
+      "description": "Summarize the current page"
+    },
+    "summarize-selection": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+U",
+        "mac": "Command+Shift+U"
+      },
+      "description": "Summarize the current selection"
+    },
+    "summarize-region": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "Draw a region to summarize"
+    }
+  },
+  "options_page": "src/options.html",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://api.openai.com/*",
+    "https://openrouter.ai/*",
+    "https://arxiv.org/*",
+    "https://export.arxiv.org/*"
+  ]
+}

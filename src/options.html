@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Screen Summarizer Settings</title>
+    <link rel="stylesheet" href="options.css">
+  </head>
+  <body>
+    <main>
+      <h1>Screen Summarizer Settings</h1>
+      <form id="settings">
+        <label>
+          Provider
+          <select id="provider" name="provider">
+            <option value="openrouter">OpenRouter</option>
+            <option value="openai">OpenAI</option>
+          </select>
+        </label>
+        <label>
+          API key
+          <input id="apiKey" name="apiKey" type="password" autocomplete="off" placeholder="sk-or-v1-... or sk-...">
+        </label>
+        <label>
+          Model
+          <input id="model" name="model" type="text" value="openrouter/free">
+        </label>
+        <label>
+          Output language
+          <select id="language" name="language">
+            <option value="same">Same as page</option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Telugu">Telugu</option>
+            <option value="Tamil">Tamil</option>
+            <option value="Bengali">Bengali</option>
+            <option value="Marathi">Marathi</option>
+          </select>
+        </label>
+        <label class="checkbox">
+          <input id="privacyMode" name="privacyMode" type="checkbox" checked>
+          Redact emails, phone numbers, PAN and Aadhaar-like identifiers before sending
+        </label>
+        <button type="submit">Save settings</button>
+        <p id="status" role="status"></p>
+      </form>
+    </main>
+    <script src="options.js"></script>
+  </body>
+</html>
